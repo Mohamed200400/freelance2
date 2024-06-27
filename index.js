@@ -3,7 +3,7 @@ const express = require("express")
 const cors = require("cors")
 const user = require("./router/User")
 const question = require("./router/Question")
-const path = require('path');
+
 
 const app = express()
 
@@ -16,14 +16,7 @@ const conn = mongoose.Connection;
 app.use(express.json())
 app.use(cors())
 
-// Serve static files from the dist folder
-app.use(express.static(path.join(__dirname, '../dist')));
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
-});
 
 
 app.use("/api",user)
