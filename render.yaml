@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: back
+    env: static
+    static_publish_path: dist
