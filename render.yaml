@@ -1,5 +1,10 @@
 services:
   - type: web
     name: back
-    env: static
-    static_publish_path: dist
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Add other environment variables here if needed
