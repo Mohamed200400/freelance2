@@ -9,9 +9,9 @@ const nodemailer = require('nodemailer');
 
 const app = express()
 
- //mongoose.connect("mongodb+srv://mohamed:admin123@project1.sxosfwz.mongodb.net/project1").then(()=>{console.log('db connected')})
+mongoose.connect(process.env.DB_CODE).then(()=>{console.log('db connected')})
 
-mongoose.connect("mongodb://0.0.0.0/Question").then(()=>{console.log('db connected');})
+//mongoose.connect("mongodb://0.0.0.0/Question").then(()=>{console.log('db connected');})
 const conn = mongoose.Connection;
 
 
